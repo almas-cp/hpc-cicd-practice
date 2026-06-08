@@ -1,0 +1,20 @@
+name: Hello CI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:   # allows manual run from GitHub UI
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest    # GitHub's cloud runner
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello from CI! Branch is ${{ github.ref }}"
+
+      - name: Show the machine
+        run: uname -a && nproc && free -h
