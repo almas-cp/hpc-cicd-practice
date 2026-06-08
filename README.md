@@ -1,1 +1,1 @@
-first commit
+# HPC CI/CD practice repo
